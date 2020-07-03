@@ -1,0 +1,549 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20194.20.0323.1706                               -->
+<workbook original-version='18.1' source-build='2019.4.5 (20194.20.0323.1706)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='20191226-items+' inline='true' name='federated.02b71dt0r6v5y517y3rkp16diqve' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='20191226-items' name='textscan.1bp4zrv0c6xgs11co9u751fepqxv'>
+            <connection class='textscan' directory='A:/Users/Temor AL-Kaisi/Documents/Data-Visualization/BI' filename='20191226-items.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[20191226-items.csv].[asin]' />
+              <expression op='[20191226-reviews.csv].[asin]' />
+            </expression>
+          </clause>
+          <relation connection='textscan.1bp4zrv0c6xgs11co9u751fepqxv' name='20191226-items.csv' table='[20191226-items#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
+              <column datatype='string' name='asin' ordinal='0' />
+              <column datatype='string' name='brand' ordinal='1' />
+              <column datatype='string' name='title' ordinal='2' />
+              <column datatype='string' name='url' ordinal='3' />
+              <column datatype='string' name='image' ordinal='4' />
+              <column datatype='real' name='rating' ordinal='5' />
+              <column datatype='string' name='reviewUrl' ordinal='6' />
+              <column datatype='integer' name='totalReviews' ordinal='7' />
+              <column datatype='real' name='price' ordinal='8' />
+              <column datatype='real' name='originalPrice' ordinal='9' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1bp4zrv0c6xgs11co9u751fepqxv' name='20191226-reviews.csv' table='[20191226-reviews#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
+              <column datatype='string' name='asin' ordinal='0' />
+              <column datatype='string' name='name' ordinal='1' />
+              <column datatype='integer' name='rating' ordinal='2' />
+              <column datatype='date' date-parse-format='MMMM dd, yyyy' name='date' ordinal='3' />
+              <column datatype='boolean' name='verified' ordinal='4' />
+              <column datatype='string' name='title' ordinal='5' />
+              <column datatype='string' name='body' ordinal='6' />
+              <column datatype='integer' name='helpfulVotes' ordinal='7' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[asin (20191226-reviews.csv)]' value='[20191226-reviews.csv].[asin]' />
+          <map key='[asin]' value='[20191226-items.csv].[asin]' />
+          <map key='[body]' value='[20191226-reviews.csv].[body]' />
+          <map key='[brand]' value='[20191226-items.csv].[brand]' />
+          <map key='[date]' value='[20191226-reviews.csv].[date]' />
+          <map key='[helpfulVotes]' value='[20191226-reviews.csv].[helpfulVotes]' />
+          <map key='[image]' value='[20191226-items.csv].[image]' />
+          <map key='[name]' value='[20191226-reviews.csv].[name]' />
+          <map key='[originalPrice]' value='[20191226-items.csv].[originalPrice]' />
+          <map key='[price]' value='[20191226-items.csv].[price]' />
+          <map key='[rating (20191226-reviews.csv)]' value='[20191226-reviews.csv].[rating]' />
+          <map key='[rating]' value='[20191226-items.csv].[rating]' />
+          <map key='[reviewUrl]' value='[20191226-items.csv].[reviewUrl]' />
+          <map key='[title (20191226-reviews.csv)]' value='[20191226-reviews.csv].[title]' />
+          <map key='[title]' value='[20191226-items.csv].[title]' />
+          <map key='[totalReviews]' value='[20191226-items.csv].[totalReviews]' />
+          <map key='[url]' value='[20191226-items.csv].[url]' />
+          <map key='[verified]' value='[20191226-reviews.csv].[verified]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[20191226-items.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;£&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>asin</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[asin]</local-name>
+            <parent-name>[20191226-items.csv]</parent-name>
+            <remote-alias>asin</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>brand</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[brand]</local-name>
+            <parent-name>[20191226-items.csv]</parent-name>
+            <remote-alias>brand</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>title</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[title]</local-name>
+            <parent-name>[20191226-items.csv]</parent-name>
+            <remote-alias>title</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>url</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[url]</local-name>
+            <parent-name>[20191226-items.csv]</parent-name>
+            <remote-alias>url</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>image</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[image]</local-name>
+            <parent-name>[20191226-items.csv]</parent-name>
+            <remote-alias>image</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rating</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[rating]</local-name>
+            <parent-name>[20191226-items.csv]</parent-name>
+            <remote-alias>rating</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>reviewUrl</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[reviewUrl]</local-name>
+            <parent-name>[20191226-items.csv]</parent-name>
+            <remote-alias>reviewUrl</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>totalReviews</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[totalReviews]</local-name>
+            <parent-name>[20191226-items.csv]</parent-name>
+            <remote-alias>totalReviews</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>price</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[price]</local-name>
+            <parent-name>[20191226-items.csv]</parent-name>
+            <remote-alias>price</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>originalPrice</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[originalPrice]</local-name>
+            <parent-name>[20191226-items.csv]</parent-name>
+            <remote-alias>originalPrice</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[20191226-reviews.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;£&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>asin</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[asin (20191226-reviews.csv)]</local-name>
+            <parent-name>[20191226-reviews.csv]</parent-name>
+            <remote-alias>asin</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[name]</local-name>
+            <parent-name>[20191226-reviews.csv]</parent-name>
+            <remote-alias>name</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rating</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[rating (20191226-reviews.csv)]</local-name>
+            <parent-name>[20191226-reviews.csv]</parent-name>
+            <remote-alias>rating</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[date]</local-name>
+            <parent-name>[20191226-reviews.csv]</parent-name>
+            <remote-alias>date</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>verified</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[verified]</local-name>
+            <parent-name>[20191226-reviews.csv]</parent-name>
+            <remote-alias>verified</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>title</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[title (20191226-reviews.csv)]</local-name>
+            <parent-name>[20191226-reviews.csv]</parent-name>
+            <remote-alias>title</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>body</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[body]</local-name>
+            <parent-name>[20191226-reviews.csv]</parent-name>
+            <remote-alias>body</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>helpfulVotes</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[helpfulVotes]</local-name>
+            <parent-name>[20191226-reviews.csv]</parent-name>
+            <remote-alias>helpfulVotes</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Asin' datatype='string' name='[asin]' role='dimension' type='nominal' />
+      <column caption='Brand' datatype='string' name='[brand]' role='dimension' type='nominal' />
+      <column caption='Image' datatype='string' name='[image]' role='dimension' type='nominal' />
+      <column caption='Original Price' datatype='real' name='[originalPrice]' role='measure' type='quantitative' />
+      <column caption='Price' datatype='real' name='[price]' role='measure' type='quantitative' />
+      <column caption='Rating' datatype='real' name='[rating]' role='measure' type='quantitative' />
+      <column caption='Review Url' datatype='string' name='[reviewUrl]' role='dimension' type='nominal' />
+      <column caption='Title' datatype='string' name='[title]' role='dimension' type='nominal' />
+      <column caption='Total Reviews' datatype='integer' name='[totalReviews]' role='measure' type='quantitative' />
+      <column caption='Url' datatype='string' name='[url]' role='dimension' type='nominal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.539043' measure-ordering='alphabetic' measure-percentage='0.460957' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United Kingdom&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='20191226-items+' name='federated.02b71dt0r6v5y517y3rkp16diqve' />
+          </datasources>
+          <datasource-dependencies datasource='federated.02b71dt0r6v5y517y3rkp16diqve'>
+            <column caption='Brand' datatype='string' name='[brand]' role='dimension' type='nominal' />
+            <column-instance column='[brand]' derivation='None' name='[none:brand:nk]' pivot='key' type='nominal' />
+            <column caption='Rating' datatype='real' name='[rating]' role='measure' type='quantitative' />
+            <column-instance column='[rating]' derivation='Sum' name='[sum:rating:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <encodings>
+              <color column='[federated.02b71dt0r6v5y517y3rkp16diqve].[none:brand:nk]' />
+              <wedge-size column='[federated.02b71dt0r6v5y517y3rkp16diqve].[sum:rating:qk]' />
+              <size column='[federated.02b71dt0r6v5y517y3rkp16diqve].[sum:rating:qk]' />
+              <text column='[federated.02b71dt0r6v5y517y3rkp16diqve].[none:brand:nk]' />
+              <text column='[federated.02b71dt0r6v5y517y3rkp16diqve].[sum:rating:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{81A98694-F5B3-45F3-82C5-A979CBE7567E}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.02b71dt0r6v5y517y3rkp16diqve].[none:brand:nk]' type='color' />
+            <card pane-specification-id='0' param='[federated.02b71dt0r6v5y517y3rkp16diqve].[sum:rating:qk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.02b71dt0r6v5y517y3rkp16diqve].[none:asin:nk]</field>
+            <field>[federated.02b71dt0r6v5y517y3rkp16diqve].[none:brand:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{E064B87F-ECDA-4887-A6AF-066DE4FD962B}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
